@@ -1,0 +1,64 @@
+---
+title: "Modeling Process Quality"
+output: html_notebook
+---
+# Stem-and-Leaf Plot
+  - One of the most useful graphica techniques for summarizing and presenting data.
+
+## Process
+  - Assuming each data consists of at least two digits.
+  - divide each number into two parts:
+      - stem, consisting of one or more of the leading digits
+      - leaf, consisting of the remaining digits
+  - choose relatively few stems in comparison with the number of observations (between 5 and 20 stems)
+  - list the chosen stems along the left-hand margin of the display
+  - list beside each stem all leaves corresponding to the observed data values according to the order in which they are encountered in the data set.
+```{r}
+days <- c(36,37,26,36,46,35,47,35,34,36,42,43,36,56,32,46,30,37,43,17,26,28,27,45,33,22,27,16,22,33,30,24,23,22,30,31,17)
+stem(days)
+
+
+
+diameter <- c(120.5,120.9,120.3,121.3,120.4,120.2,120.1,120.5,120.7,121.1,120.9,120.8)
+boxplot(diameter)
+
+```
+# Histogram
+  - is a more compact summary of data than a stem-and-leaf plot.
+  - better suited for larger data set, 75 to 100 or more observations
+## Process
+  - Divide the range of the data into intervals-- **class intervals, cells, ** or **bins** _(determine upper and lower boundary of each bin)_
+      - the number of bins depends on the number of observations and the amount of scatter or dispersion in the data. In general, between 5 to 20 bins is statisfactory in most cases.
+      - Number of bins should increase with $n$, number of observations
+      - approximately equal to the square root of the number observations often works well.
+      - **Sturger's rule**, $h=1+\log_2n$ where $n$ is the sample size.
+  - determine axes of the histogram 
+      - Use horizontal axis to represent the measurement scale for the data
+      - Use the vertical scale to represent the counts, or **frequencies**
+      - when the frequencies in each bin are divided by the total number of observations $(n)$, it is called **relative frequencies**
+  - draw rectangles over each bin so that the height of each rectangle is proportional to the frequenciy, or relative frequency
+```{r}  
+thick <- c(438,413,444,468,445,472,474,454,455,449,450,450,450,459,466,470,457,441,450,445,487,430,446,450,456,433,455,459,423,455,451,437,444,453,434,454,448,435,432,441,452,465,466,473,471,464,478,446,459,464,441,444,458,454,437,443,465,435,444,457,444,471,471,458,459,449,462,460,445,437,461,453,452,438,445,435,454,428,454,434,432,431,455,447,454,435,425,449,449,452,471,458,445,463,423,451,440,442,441,439)
+hist(thick)
+
+defect <- c(6,1,5,7,8,6,0,2,4,2,5,2,4,4,1,4,1,7,2,3,4,3,3,3,6,3,2,3,4,5,5,2,3,4,4,4,2,3,5,7,5,4,5,5,4,5,3,3,3,12)
+hist(defect,12)
+```
+# Numerical Summary of Data
+ - Numerical measures of central tendency and scatter.
+ - suppose that $x_1, x_2, ...,x_n$ are observations
+
+## Sample Average
+$$\bar{x}=\frac{x_1+x_2+...+x_n}{n}=\frac{\sum_{i=1}^{n}x_i}{n}$$
+- arithmetic mean of the $n$ observations
+```{r}
+mean(thick)
+```
+
+## Sample Variance
+$$s^2=\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}$$
+- measure variability in the sample data
+- if there is no variability in the sample, each observation $x_i=\bar{x}$ and the sample variance $S^2=0$
+
+## Sample Standard Deviation
+$$s=\sqrt{\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}}$$
