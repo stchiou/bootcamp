@@ -16,12 +16,6 @@ output: html_notebook
 ```{r}
 days <- c(36,37,26,36,46,35,47,35,34,36,42,43,36,56,32,46,30,37,43,17,26,28,27,45,33,22,27,16,22,33,30,24,23,22,30,31,17)
 stem(days)
-
-
-
-diameter <- c(120.5,120.9,120.3,121.3,120.4,120.2,120.1,120.5,120.7,121.1,120.9,120.8)
-boxplot(diameter)
-
 ```
 # Histogram
   - is a more compact summary of data than a stem-and-leaf plot.
@@ -69,3 +63,9 @@ $$s=\sqrt{\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}}$$
       - departure from symmetry
       - identification of outliers
 - displays the three quartiles (Q1, Q2, and Q3), the minimum, and the maximum of the data on a rectangle box (vertical or horizontal)
+
+```{r}
+diameter <- c(120.5,120.9,120.3,121.3,120.4,120.2,120.1,120.5,120.7,121.1,120.9,120.8)
+bp <- boxplot(diameter, horizontal=TRUE, xlab="Hole Diameters (mm)")
+
+```
