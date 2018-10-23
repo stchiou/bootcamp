@@ -62,4 +62,10 @@ $$s^2=\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}$$
 
 ## Sample Standard Deviation
 $$s=\sqrt{\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}}$$
-# Box Plot
+# Box Plot (Box Whisker Plot)
+- graphical display for data that simultaneously displays:
+      - central tendency
+      - spread of variability
+      - departure from symmetry
+      - identification of outliers
+- displays the three quartiles (Q1, Q2, and Q3), the minimum, and the maximum of the data on a rectangle box (vertical or horizontal)
