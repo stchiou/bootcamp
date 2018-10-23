@@ -1,2 +1,2 @@
-# bootcamp
-UNC coding bootcamp
+# Statistical Quality Control
+Reading Note
