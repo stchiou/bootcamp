@@ -1,2 +1,2 @@
-# Statistical Quality Control
-Reading Note
+# Reading Note
+- Statistical Quality Control
