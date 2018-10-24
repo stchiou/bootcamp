@@ -14,14 +14,19 @@ output: html_notebook
   - list the chosen stems along the left-hand margin of the display
   - list beside each stem all leaves corresponding to the observed data values according to the order in which they are encountered in the data set.
 ```{r}
-days <- c(36,37,26,36,46,35,47,35,34,36,42,43,36,56,32,46,30,37,43,17,26,28,27,45,33,22,27,16,22,33,30,24,23,22,30,31,17)
+days <- c(48,41,35,36,37,26,36,46,35,47,35,34,36,42,43,36,56,32,46,30,37,43,17,26,28,27,45,33,22,27,16,22,33,30,24,23,22,30,31,17)
 stem(days)
 ```
 # Time Series Plot (Run Chart)
 - A plot of data values versus time.
 
 ```{r}
+library(ggplot2)
+library(ggExtra)
 times <- c(1:40)
+df <- data.frame(times, days)
+p <- ggplot(df,aes(times,days))+ geom_point() +theme_classic()
+ggMarginal(p,type="histogram",margins="y")
 ```
 # Histogram
   - is a more compact summary of data than a stem-and-leaf plot.
