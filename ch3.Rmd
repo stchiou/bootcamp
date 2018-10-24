@@ -19,6 +19,7 @@ stem(days)
 ```
 # Time Series Plot (Run Chart)
 - A plot of data values versus time.
+- Called a marginal plot if a histogram/dot plot is attached to the margin of the chart.
 
 ```{r}
 library(ggplot2)
