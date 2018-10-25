@@ -93,7 +93,7 @@ $$s=\sqrt{\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}}$$
 
 ```{r}
 diameter <- c(120.5,120.9,120.3,121.3,120.4,120.2,120.1,120.5,120.7,121.1,120.9,120.8)
-bp <- boxplot(diameter, horizontal=TRUE, xlab="Hole Diameters (mm)", border=TRUE)
+bp <- boxplot(diameter, horizontal=TRUE, xlab="Hole Diameters (mm)", border=TRUE, frame=FALSE,axes=FALSE)
 leg <- as.character(bp$stats)
 text(x=bp$stats,y=0.7,labels=leg)
 ```
