@@ -24,10 +24,13 @@ stem(days)
 ```{r}
 library(ggplot2)
 library(ggExtra)
+library(grid)
 times <- c(1:40)
 df <- data.frame(times, days)
 p <- ggplot(df,aes(times,days))+ geom_point() +theme_classic()
-ggMarginal(p,type="histogram",margins="y")
+mp <- ggMarginal(p,type="histogram",margins="y")
+grid.newpage()
+grid.draw(mp)
 ```
 # Histogram
   - is a more compact summary of data than a stem-and-leaf plot.
