@@ -35,9 +35,9 @@ mp <- ggMarginal(p,type="histogram",margins="y")
 grid.newpage()
 grid.draw(mp)
 
-################################
-# Second Attemp, Layout approach
-################################
+##################################################
+# Second Attemp, Layout approach--preferable way
+##################################################
 new_layout <- layout(matrix(c(1,2),nrow=1,ncol=2),widths=c(5,1),heights=c(5,5),TRUE)
 par(mar=c(5,4,2,0))
 plot(df,xlab="Times",ylab="Days",main="Marginal Plot")
@@ -101,8 +101,15 @@ text(x=bp$stats,y=0.7,labels=leg)
 # Probablity Distribution
 - A mathematical model that relates the value of the variable with the probability of occurence that value in the population.
 - There are two types of probability distribution:
+
 ## Continous Distributions
 - when the variable being measured is on a continous scale, its probability distribution is called a _continous distribution_
+- the appearance of the continous distribution is a curve with area under the curve equal to probability
+- the probability that $x$ lies in the interval from $a$ to $b$ is written as 
+$$P\{a\le{x}\le{b}\}=\int_a^b f(x)dx$$
 
 ## Discrete Distributions
 - when the parameter being measured can only take on certain values, its probability distribution is called a _discrete distribution_
+- the appearance of a discrete distribution is a series of vertical spikes with the height of each spike proportional to the probability.
+- the distribution can be described as:
+$$P\{x=x_i\}=p(x_i)$$
