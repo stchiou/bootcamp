@@ -97,3 +97,12 @@ bp <- boxplot(diameter, horizontal=TRUE, xlab="Hole Diameters (mm)", border=TRUE
 leg <- as.character(bp$stats)
 text(x=bp$stats,y=0.7,labels=leg)
 ```
+
+# Probablity Distribution
+- A mathematical model that relates the value of the variable with the probability of occurence that value in the population.
+- There are two types of probability distribution:
+## Continous Distributions
+- when the variable being measured is on a continous scale, its probability distribution is called a _continous distribution_
+
+## Discrete Distributions
+- when the parameter being measured can only take on certain values, its probability distribution is called a _discrete distribution_
