@@ -38,7 +38,11 @@ grid.draw(mp)
 ################################
 # Second Attemp, Layout approach
 ################################
-
+new_layout <- layout(matrix(c(1,2),nrow=1,ncol=2),widths=c(5,1),heights=c(5,5),TRUE)
+par(mar=c(5,4,2,0))
+plot(df,xlab="Times",ylab="Days",main="Marginal Plot")
+par(mar=c(5,0,2,1))
+stripchart(days,method="stack",offset=0.5,vertical=TRUE,axes=FALSE)
 ```
 # Histogram
   - is a more compact summary of data than a stem-and-leaf plot.
