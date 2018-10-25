@@ -113,3 +113,38 @@ $$P\{a\le{x}\le{b}\}=\int_a^b f(x)dx$$
 - the appearance of a discrete distribution is a series of vertical spikes with the height of each spike proportional to the probability.
 - the distribution can be described as:
 $$P\{x=x_i\}=p(x_i)$$
+
+## Central Tendency
+- The *mean* $\mu$ of a probability distribution is a measure of the **central tendency** in the distribution.
+- the mean is defined as
+$$
+\begin{equation}
+\mu =
+\begin{cases}
+\int_{-\infty}^{\infty}xf(x)dx,x \text{ continuous}\\
+\sum_{i=1}^{\infty}x_i p(x_i),x \text{ discrete}
+\end{cases}
+\end{equation}
+$$
+- the mean of a discrete random variable with exactly $N$ equally likely values can be simplified to
+
+$$ \mu=\frac{\sum_{i=1}^{N}x_i}{N}$$
+
+- the scatter, spread, or variability in a distribution is expressed by the **variance** $\sigma^2$
+- the variance is defined as:
+
+$$
+\begin{equation}
+\sigma^2=
+\begin{cases}
+\int_{-\infty}^{\infty}(x-\mu)^2f(x)dx,x \text{ continuous}\\
+\sum_{i=1}^{\infty}(x_i-\mu)^2p(x_i),x \text{ discrete}
+\end{cases}
+\end{equation}
+$$
+
+- the variance of $N$ random variables with equally likely values becomes
+
+$$
+\sigma^2=\frac{}{}
+$$
