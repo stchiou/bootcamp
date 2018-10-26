@@ -1,11 +1,15 @@
 ---
-title: "Modeling Process Quality"
+title: "III. Modeling Process Quality"
 output: html_notebook
 ---
-# Stem-and-Leaf Plot
+
+
+# 1. Describing Variability
+
+## Stem-and-Leaf Plot
   - One of the most useful graphica techniques for summarizing and presenting data.
 
-## Process
+### Process
   - Assuming each data consists of at least two digits.
   - divide each number into two parts:
       - stem, consisting of one or more of the leading digits
@@ -17,7 +21,7 @@ output: html_notebook
 days <- c(48,41,35,36,37,26,36,46,35,47,35,34,36,42,43,36,56,32,46,30,37,43,17,26,28,27,45,33,22,27,16,22,33,30,24,23,22,30,31,17)
 stem(days)
 ```
-# Time Series Plot (Run Chart)
+## Time Series Plot (Run Chart)
 - A plot of data values versus time.
 - Called a marginal plot if a histogram/dot plot is attached to the margin of the chart.
 
@@ -44,10 +48,11 @@ plot(df,xlab="Times",ylab="Days",main="Marginal Plot")
 par(mar=c(5,0,2,1))
 stripchart(days,method="stack",offset=0.5,vertical=TRUE,axes=FALSE)
 ```
-# Histogram
+## Histogram
   - is a more compact summary of data than a stem-and-leaf plot.
   - better suited for larger data set, 75 to 100 or more observations
-## Process
+
+### Process
   - Divide the range of the data into intervals-- **class intervals, cells, ** or **bins** _(determine upper and lower boundary of each bin)_
       - the number of bins depends on the number of observations and the amount of scatter or dispersion in the data. In general, between 5 to 20 bins is statisfactory in most cases.
       - Number of bins should increase with $n$, number of observations
@@ -65,25 +70,25 @@ hist(thick)
 defect <- c(6,1,5,7,8,6,0,2,4,2,5,2,4,4,1,4,1,7,2,3,4,3,3,3,6,3,2,3,4,5,5,2,3,4,4,4,2,3,5,7,5,4,5,5,4,5,3,3,3,12)
 hist(defect,12)
 ```
-# Numerical Summary of Data
+## Numerical Summary of Data
  - Numerical measures of central tendency and scatter.
  - suppose that $x_1, x_2, ...,x_n$ are observations
 
-## Sample Average
+### Sample Average
 $$\bar{x}=\frac{x_1+x_2+...+x_n}{n}=\frac{\sum_{i=1}^{n}x_i}{n}$$
 - arithmetic mean of the $n$ observations
 ```{r}
 mean(thick)
 ```
 
-## Sample Variance
+### Sample Variance
 $$s^2=\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}$$
 - measure variability in the sample data
 - if there is no variability in the sample, each observation $x_i=\bar{x}$ and the sample variance $S^2=0$
 
-## Sample Standard Deviation
+### Sample Standard Deviation
 $$s=\sqrt{\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}}$$
-# Box Plot (Box Whisker Plot)
+## Box Plot (Box Whisker Plot)
 - graphical display for data that simultaneously displays:
       - central tendency
       - spread of variability
@@ -98,23 +103,23 @@ leg <- as.character(bp$stats)
 text(x=bp$stats,y=0.7,labels=leg)
 ```
 
-# Probablity Distribution
+## Probablity Distribution
 - A mathematical model that relates the value of the variable with the probability of occurence that value in the population.
 - There are two types of probability distribution:
 
-## Continous Distributions
+### Continous Distributions
 - when the variable being measured is on a continous scale, its probability distribution is called a _continous distribution_
 - the appearance of the continous distribution is a curve with area under the curve equal to probability
 - the probability that $x$ lies in the interval from $a$ to $b$ is written as 
 $$P\{a\le{x}\le{b}\}=\int_a^b f(x)dx$$
 
-## Discrete Distributions
+### Discrete Distributions
 - when the parameter being measured can only take on certain values, its probability distribution is called a _discrete distribution_
 - the appearance of a discrete distribution is a series of vertical spikes with the height of each spike proportional to the probability.
 - the distribution can be described as:
 $$P\{x=x_i\}=p(x_i)$$
 
-## Central Tendency
+#### Central Tendency
 - The *mean* $\mu$ of a probability distribution is a measure of the **central tendency** in the distribution.
 - the mean is defined as
 $$
@@ -148,3 +153,47 @@ $$
 $$
 \sigma^2=\frac{\sum_{i=1}^{N}(x_i-\mu)^2}{N}
 $$
+
+- It is customary to work with square root of variance, called the **standard deviation** $\sigma$
+$$
+\sqrt{\sigma^2}=\sqrt{\frac{\sum_{i=1}^{N}(x_i-\mu)^2}{N}}
+$$
+
+- standard deviation is the measure of spread in the population 
+
+# 2. Important Discrete Distributions
+
+## The Hypergeometric Distribution
+
+## The Binomial Distribution
+
+## The Poisson Distribution
+
+## The Pascal and Related Distributions
+
+# 3. Important Continuous Distributions
+
+## The Normal Distribution
+
+## The Lognormal Distribution
+
+## The Exponential Distribution
+
+## The Gamma Distribution
+
+## The Weibull Distribution
+
+# 4. Probability Plots
+
+## Normal Probability Plot
+
+## Other Probability Plots
+
+# 5. Some Useful Approximation
+
+## The Binomial Approximation to the Hypergeometric
+
+## The Poisson Approximation to the Binomial
+
+## The Normal Approximation to the Binomial
+
