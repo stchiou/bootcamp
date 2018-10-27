@@ -165,6 +165,43 @@ $$
 
 ## The Hypergeometric Distribution
 
+### Definition
+- hypergeometric random variable $x$
+
+    - within a finite population consisting of $N$ items, 
+    
+    - $D(D\le N)$ all into a class of interes
+    
+    - a random sample of $n$ items is selected from the population _without replacement_, $x$ is the number observed that belongs to the class of interst
+
+- probability distribution is defined as:
+
+$$
+p(x)=\frac{
+\left(
+\begin{matrix}
+D\\
+x
+\end{matrix}
+\right)
+\left(
+\begin{matrix}
+N-D\\
+n-x
+\end{matrix}
+\right)
+}
+{
+\left(
+\begin{matrix}
+N\\
+n
+\end{matrix}
+\right)
+} 
+x=0,1,2,...,\text{min}(n,D)
+$$
+
 ## The Binomial Distribution
 
 ## The Poisson Distribution
