@@ -221,8 +221,25 @@ b
 \end{matrix}
 \right)=\frac{a!}{b!(a-b)!}
 $$
-- the **hypergeomtric distribution** is the appropriate probability model for    
-    
+- the **hypergeometric distribution** is the appropriate probability model for selecting a _random sample_ of $n$ items _without replacement_ from a lot of $N$ items of which $D$ are non conforming (defective)
+- $x$ usually represents the number of nonconforming items found in the sample
+```{r}
+# Displaying Cumulative Distribution Function of Hypergeometric Distribution
+# x=0,1,2,3,4,5,6,7,8,9,10
+# D=5; nonconforming
+# lot size, N =5+95=100, conforming=100-5=95
+# n=10; sampling size
+# p(X $\le$ x)
+library(gridExtra)
+library(grid)
+drawn <- c(0:10)
+cumulative.probability <- phyper(drawn,5,95,10)
+# probability of 0, 1, 2, 3,...,10 nonconformative items found in the sample.
+hyper <- cbind(drawn,cumulative.probability)
+grid.newpage()
+g <- grid.table(hyper)
+
+```
     
 ## The Binomial Distribution
 
