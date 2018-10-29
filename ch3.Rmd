@@ -294,6 +294,16 @@ barplot(bd0.1,n,col="blue",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,s
 barplot(bd0.5,n,col="red",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
 barplot(bd0.9,n,col="yellow",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
 ```
+```{r binomialdistribution of different n fixed p}
+
+n <- c(0:30)
+bd1 <- dbinom(n,10,0.25)
+bd2 <- dbinom(n,20,0.25)
+bd3 <- dbinom(n,40,0.25)
+barplot(bd1,n,col="blue",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
+barplot(bd2,n,col="red",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
+barplot(bd3,n,col="yellow",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
+```
 ## The Poisson Distribution
 
 ## The Pascal and Related Distributions
