@@ -246,7 +246,7 @@ grid.newpage()
 g <- grid.table(hyper)
 
 ```
-    
+
 ## The Binomial Distribution
 
 ### Bernoulli Trials
@@ -281,6 +281,18 @@ pd <- dbinom(drawn,15,0.1)
 bd <- cbind(drawn,pd)
 grid.newpage()
 grid.table(bd)
+```
+- for a fixed $n$, the binomial distribution becomes more symmetric as $p$ increases from $0$ to $0.5$ or decreases from $1$ to $0.5$
+
+- for a fixed $p$, the distriubtion becomes more symmetric as $n$ increases
+```{r Binomial Distribution n_15 different p}
+n=c(0:15)
+bd0.1 <- dbinom(n,15,0.1)
+bd0.5 <- dbinom(n,15,0.5)
+bd0.9 <- dbinom(n,15,0.9)
+barplot(bd0.1,n,col="blue",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
+barplot(bd0.5,n,col="red",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
+barplot(bd0.9,n,col="yellow",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
 ```
 ## The Poisson Distribution
 
