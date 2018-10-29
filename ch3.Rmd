@@ -201,7 +201,29 @@ n
 } 
 x=0,1,2,...,\text{min}(n,D)
 $$
+- the mean and variance of the distribution are:
+1. Mean
+$$
+\mu=\frac{nD}{N}
+$$
+2. Variance
+$$
+\sigma^2=\frac{nD}{N}(1-\frac{D}{N})
+(\frac{N-n}{N-1}) 
+$$
+    - the number of combinations of $a$ items taken $b$ at a time is difined as
 
+$$
+\left(
+\begin{matrix}
+a\\
+b
+\end{matrix}
+\right)=\frac{a!}{b!(a-b)!}
+$$
+- the **hypergeomtric distribution** is the appropriate probability model for    
+    
+    
 ## The Binomial Distribution
 
 ## The Poisson Distribution
