@@ -17,7 +17,7 @@ output: html_notebook
   - choose relatively few stems in comparison with the number of observations (between 5 and 20 stems)
   - list the chosen stems along the left-hand margin of the display
   - list beside each stem all leaves corresponding to the observed data values according to the order in which they are encountered in the data set.
-```{r}
+```{r stem_and_leaf_plot}
 days <- c(48,41,35,36,37,26,36,46,35,47,35,34,36,42,43,36,56,32,46,30,37,43,17,26,28,27,45,33,22,27,16,22,33,30,24,23,22,30,31,17)
 stem(days)
 ```
@@ -25,7 +25,7 @@ stem(days)
 - A plot of data values versus time.
 - Called a marginal plot if a histogram/dot plot is attached to the margin of the chart.
 
-```{r}
+```{r time_series_plot_marginal_plot}
 ###################################
 # First Attempt, ggExtra approach
 ###################################
@@ -63,7 +63,7 @@ stripchart(days,method="stack",offset=0.5,vertical=TRUE,axes=FALSE)
       - Use the vertical scale to represent the counts, or **frequencies**
       - when the frequencies in each bin are divided by the total number of observations $(n)$, it is called **relative frequencies**
   - draw rectangles over each bin so that the height of each rectangle is proportional to the frequenciy, or relative frequency
-```{r}  
+```{r histogram}  
 thick <- c(438,413,444,468,445,472,474,454,455,449,450,450,450,459,466,470,457,441,450,445,487,430,446,450,456,433,455,459,423,455,451,437,444,453,434,454,448,435,432,441,452,465,466,473,471,464,478,446,459,464,441,444,458,454,437,443,465,435,444,457,444,471,471,458,459,449,462,460,445,437,461,453,452,438,445,435,454,428,454,434,432,431,455,447,454,435,425,449,449,452,471,458,445,463,423,451,440,442,441,439)
 hist(thick)
 
@@ -77,7 +77,7 @@ hist(defect,12)
 ### Sample Average
 $$\bar{x}=\frac{x_1+x_2+...+x_n}{n}=\frac{\sum_{i=1}^{n}x_i}{n}$$
 - arithmetic mean of the $n$ observations
-```{r}
+```{r mean_calculation}
 mean(thick)
 ```
 
@@ -85,9 +85,15 @@ mean(thick)
 $$s^2=\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}$$
 - measure variability in the sample data
 - if there is no variability in the sample, each observation $x_i=\bar{x}$ and the sample variance $S^2=0$
-
+```{r variance_calculation}
+var(thick)
+```
 ### Sample Standard Deviation
 $$s=\sqrt{\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}}$$
+```{r standard_deviation}
+sd(thick)
+
+```
 ## Box Plot (Box Whisker Plot)
 - graphical display for data that simultaneously displays:
       - central tendency
@@ -96,7 +102,7 @@ $$s=\sqrt{\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}}$$
       - identification of outliers
 - displays the three quartiles (Q1, Q2, and Q3), the minimum, and the maximum of the data on a rectangle box (vertical or horizontal)
 
-```{r}
+```{r box_plot}
 diameter <- c(120.5,120.9,120.3,121.3,120.4,120.2,120.1,120.5,120.7,121.1,120.9,120.8)
 bp <- boxplot(diameter, horizontal=TRUE, xlab="Hole Diameters (mm)", border=TRUE, frame=FALSE,axes=FALSE)
 leg <- as.character(bp$stats)
@@ -223,7 +229,7 @@ b
 $$
 - the **hypergeometric distribution** is the appropriate probability model for selecting a _random sample_ of $n$ items _without replacement_ from a lot of $N$ items of which $D$ are non conforming (defective)
 - $x$ usually represents the number of nonconforming items found in the sample
-```{r}
+```{r cumulative_distribution_of_hypergeomtric_distribution}
 # Displaying Cumulative Distribution Function of Hypergeometric Distribution
 # x=0,1,2,3,4,5,6,7,8,9,10
 # D=5; nonconforming
@@ -244,33 +250,30 @@ g <- grid.table(hyper)
 ## The Binomial Distribution
 
 ### Bernoulli Trials
+
 - a process consists of a sequence of $n$ independent trials (the outcome of each trial does not depend in any way of the outcome of previous trials)
 - the outcome of each trial is either a _success_ or a _failure_
 
 ### Definition
-- the probability of "success" on any trial, $p$ is constant
--the number of "successes" $x$ in $n$ Bernoulli trial has the **bionomial distribution** with parameters $n \ge 0$ and $0<p<1$ defined as:
-$$
-p(x)=
-\left(
-\begin{array}\\
-n \\
-x
-\end{array}
-\right)
 
-p^x(1-p)^{n-x}  \hspace{1cm} x=0,1,...,n
-$$
+- the probability of "success" on any trial, $p$ is constant
+
+- the number of "successes" $x$ in $n$ Bernoulli trial has the **bionomial distribution** with parameters $n \ge 0$ and $0<p<1$ defined as:
+
+$$p(x)=\left(\begin{array} \\n \\x\end{array}\right)p^x(1-p)^{n-x}  \hspace{1cm} x=0,1,...,n$$
+
 - The mean of the binomial distribution is
 $$ \mu=np$$
+
 - The variance of the binomial distribution is 
+
 $$ \sigma^2=np(1-p)$$
 - the binomial distribution is the appropriate probability model for sampling from an infinitely large population where
 
-    - $p$ represents the fraction of defective item in poplulation
-    - $x$ represents the number of nonconforming item found in a random sample of $n$ items
+$p$ represents the fraction of defective item in poplulation
+$x$ represents the number of nonconforming item found in a random sample of $n$ items
     
-```{r}
+```{r binomial_distribution}
 library(grid)
 library(gridExtra)
 drawn=c(0:10)
