@@ -180,7 +180,7 @@ $$
     
     - a random sample of $n$ items is selected from the population _without replacement_, $x$ is the number observed that belongs to the class of interst
 
-- probability distribution is defined as:
+#### probability distribution is defined as:
 
 $$
 p(x)=\frac{
@@ -207,17 +207,23 @@ n
 } 
 x=0,1,2,...,\text{min}(n,D)
 $$
-- the mean and variance of the distribution are:
-1. Mean
+- $D$: number of defective items in the population
+- $x$: number of defective items in the sample
+- $N$: number of items in the population
+- $n$: number of items being sampled without replacement
+
+#### Mean
+
 $$
 \mu=\frac{nD}{N}
 $$
-2. Variance
+#### Variance
+
 $$
 \sigma^2=\frac{nD}{N}(1-\frac{D}{N})
 (\frac{N-n}{N-1}) 
 $$
-    - the number of combinations of $a$ items taken $b$ at a time is difined as
+#### Number of **Combinations of $a$ Items Taken $b$ at a Time** 
 
 $$
 \left(
