@@ -212,13 +212,10 @@ $$
 
 - $n$: number of items being sampled without replacement
 
-##### Summary in Plain Language
+**Summary**
 
-$$ 
+$$ \text{probability of defective items drawn}=\frac{\text{combinations of non-conformative items drawn }\times\text{combinations of conformative items drawn}}{\text{combinations when number of drawing items equals to sample size}}$$
 
-\text{probability of defective items drawn}=\frac{\text{combinations of non-conformative items drawn }\times\text{combinations of conformative items drawn}}{\text{combinations when number of drawing items equals to sample size}}
-
-$$
 **combination of non-conformative items drawn**: how many ways that a given number of non-conformative items can be drawn from the pool of non-conformative items in the population
 
 **combination of conformative items drawn**: how many ways that conformative items in the sample can be drawn from the pool of conformative items in the population
