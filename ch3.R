@@ -32,15 +32,40 @@ mean(thick)
 #######################################
 var(thick)
 #######################################
-#6. Standard Deviation Calculation
+# 6. Standard Deviation Calculation
 #######################################
 sd(thick)
 #######################################
-#7. Box Plot
+# 7. Box Plot
 #######################################
 diameter <- c(120.5,120.9,120.3,121.3,120.4,120.2,120.1,120.5,120.7,121.1,120.9,120.8)
 bp <- boxplot(diameter, horizontal=TRUE, xlab="Hole Diameters (mm)", border=TRUE, frame=FALSE,axes=FALSE)
 leg <- as.character(bp$stats)
 text(x=bp$stats,y=0.7,labels=leg)
-######################################
-#8. Cumulative 
+###########################################
+# 8. Cumulative Distribution, Hypergeometric
+###########################################
+# Displaying Cumulative Distribution Function of Hypergeometric Distribution
+# x=0,1,2,3,4,5,6,7,8,9,10
+# D=5; nonconforming
+# lot size, N =5+95=100, conforming=100-5=95
+# n=10; sampling size
+# p(X $\le$ x)
+library(gridExtra)
+library(grid)
+drawn <- c(0:10)
+cumulative.probability <- phyper(drawn,5,95,10)
+# probability of 0, 1, 2, 3,...,10 nonconformative items found in the sample.
+hyper <- cbind(drawn,cumulative.probability)
+grid.newpage()
+g <- grid.table(hyper)
+#########################################
+# 9. Binomial Distribution
+########################################
+library(grid)
+library(gridExtra)
+drawn=c(0:10)
+pd <- dbinom(drawn,15,0.1)
+bd <- cbind(drawn,pd)
+grid.newpage()
+grid.table(bd)
