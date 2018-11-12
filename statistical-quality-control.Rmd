@@ -214,18 +214,18 @@ $$
 
 **Summary**
 
-$$ \text{probability of defective items drawn}=\frac{\text{combinations of non-conformative items drawn }\times\text{combinations of conformative items drawn}}{\text{combinations when number of drawing items equals to sample size}}$$
+$$ \text{probability of defective items drawn}=\frac{\text{combinations of non-conformative items drawn }\times\text{combinations of conformative items drawn}}{\text{combinations of drawing }n\text{ items from }N}$$
 
 **combination of non-conformative items drawn**: how many ways that a given number of non-conformative items can be drawn from the pool of non-conformative items in the population
 
 **combination of conformative items drawn**: how many ways that conformative items in the sample can be drawn from the pool of conformative items in the population
 
 
-
 #### Mean
-
+- the proportion of defective items multiply by the number of item drawn each time
 $$
 \mu=\frac{nD}{N}
+=n\times\frac{D}{N}\\
 $$
 
 #### Variance
