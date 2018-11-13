@@ -261,7 +261,8 @@ g <- grid.table(hyper)
 
 ### Bernoulli Trials
 
-- a process consists of a sequence of $n$ independent trials (the outcome of each trial does not depend in any way of the outcome of previous trials)
+- a process consists of a sequence of $n$ independent trials
+    - the outcome of each trial does not depend in any way of the outcome of previous trials
 - the outcome of each trial is either a _success_ or a _failure_
 
 ### Definition
@@ -278,7 +279,7 @@ $$ \mu=np$$
 - The variance of the binomial distribution is 
 
 $$ \sigma^2=np(1-p)$$
-- the binomial distribution is the appropriate probability model for sampling from an infinitely large population where
+- the binomial distribution is the appropriate probability model for **sampling from an infinitely large population** where
 
 $p$ represents the fraction of defective item in poplulation
 $x$ represents the number of nonconforming item found in a random sample of $n$ items
