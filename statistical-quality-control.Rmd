@@ -320,10 +320,33 @@ barplot(bd3,n,col="yellow",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,s
 - also called **sample fraction nonconforming**
 
  $$\hat{p}=\frac{x}{n}$$
-    - $x$ has a binomial distribution with parameters $n$ and $p$
-    - $\hat{p}$ is the ratio of the observed number of defective (nonconforming) items in a sample $(x)$ to the sample size $(n)$
-    
+- $x$ has a binomial distribution with parameters $n$ and $p$
+
+- $\hat{p}$ is the ratio of the observed number of defective (nonconforming) items in a sample $(x)$ to the sample size $(n)$
+
+- $\hat{p}$ is an estimate of the true, unknown value of the binomial parameter $p$.
+
+$$ P \left\{\hat{p} \le a\right\}=P\left\{\frac{x}{n} \le a\right\}=P\left\{p\le na\right\}=\sum_{x=0}^{[na]}\left(\begin{array}\\n\\x\end{array}\right)p^x(1-p)^{n-x}$$    
+- $[na]$ denotes the largest integer less than or equal to $na$
+
+- the mean of $\hat{p}$ is $p$
+
+- the variance of $\hat{p}$ is 
+$$\sigma_{\hat{p}}^2=\frac{p(1-p)}{n}$$
 ## The Poisson Distribution
+
+### Definition
+
+$$p(x)=\frac{e^{-\lambda}\lambda^x}{x!}\\
+x=0,1,.. \text{and }\lambda \gt 0$$
+
+### Mean
+
+$$ \mu=\lambda$$
+
+### Variance
+
+$$ \sigma^2=\lambda$$
 
 ## The Pascal and Related Distributions
 
