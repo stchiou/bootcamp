@@ -338,7 +338,7 @@ $$\sigma_{\hat{p}}^2=\frac{p(1-p)}{n}$$
 ### Definition
 
 $$p(x)=\frac{e^{-\lambda}\lambda^x}{x!}\\
-x=0,1,.. \text{and }\lambda \gt 0$$
+x=0,1,.. \text{and }\lambda \gt 0 $$
 
 ### Mean
 
@@ -348,6 +348,21 @@ $$ \mu=\lambda$$
 
 $$ \sigma^2=\lambda$$
 
+- both mean and variance of the Poisson distriubtion are both equal to the parameter $\lambda$
+
+- used as 
+    - a model of the number of defects or nonconformaties that occur in a unit of products
+    - any random phenomenon that occurs on a per unit basis is often well approximated by the Poisson distribution
+
+```{r Poisson Distribution}
+library(grid)
+library(gridExtra)
+x <- c(0,1,2)
+P <- ppois(q,4)
+pd <-cbind(x,P)
+grid.newpage()
+grid.table(pd)
+```
 ## The Pascal and Related Distributions
 
 ## 3. Important Continuous Distributions
