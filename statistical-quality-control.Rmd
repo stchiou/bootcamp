@@ -300,9 +300,9 @@ n=c(0:15)
 bd0.1 <- dbinom(n,15,0.1)
 bd0.5 <- dbinom(n,15,0.5)
 bd0.9 <- dbinom(n,15,0.9)
-barplot(bd0.1,n,col="blue",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
-barplot(bd0.5,n,col="red",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
-barplot(bd0.9,n,col="yellow",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
+barplot(bd0.1,n,col="blue",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,ylim=c(0,0.4))
+barplot(bd0.5,n,col="red",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
+barplot(bd0.9,n,col="yellow",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
 ```
 - for a fixed $p$ the distribution becomes more symmetric as $n$ increases
 ```{r binomialdistribution of different n fixed p}
@@ -311,9 +311,9 @@ n <- c(0:30)
 bd1 <- dbinom(n,10,0.25)
 bd2 <- dbinom(n,20,0.25)
 bd3 <- dbinom(n,40,0.25)
-barplot(bd1,n,col="blue",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
-barplot(bd2,n,col="red",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
-barplot(bd3,n,col="yellow",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1)
+barplot(bd1,n,col="blue",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,ylim=c(0,0.3))
+barplot(bd2,n,col="red",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
+barplot(bd3,n,col="yellow",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
 ```
 #### Sample Fraction Defective
 
@@ -354,14 +354,31 @@ $$ \sigma^2=\lambda$$
     - a model of the number of defects or nonconformaties that occur in a unit of products
     - any random phenomenon that occurs on a per unit basis is often well approximated by the Poisson distribution
 
-```{r Poisson Distribution}
+```{r Poisson Density Function}
 library(grid)
 library(gridExtra)
 x <- c(0,1,2)
-P <- ppois(q,4)
+P <- dpois(q,4)
 pd <-cbind(x,P)
 grid.newpage()
 grid.table(pd)
+```
+
+- as the parameter $\lambda$ becomes larger, the Poisson distribution becomes symmetric in appearance.
+
+```{r Poisson Probability Distribution}
+x <- c(0:40)
+pd1 <- dpois(x,4)
+pd2 <- dpois(x,8)
+pd3 <- dpois(x,12)
+pd4 <- dpois(x,16)
+barplot(pd1,x,col="blue",xlab="x",ylab="p(x)",beside=TRUE,axes=FALSE,width=15,space=1,ylim=c(0,0.2))
+barplot(pd2,x,col="red",xlab="x",ylab="p(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
+
+barplot(pd3,x,col="yellow",xlab="x",ylab="p(x)",beside=TRUE,axes=FALSE,width=15,space=1,add=TRUE)
+
+barplot(pd4,x,col="green",xlab="x",ylab="p(x)",beside=TRUE,axes=FALSE,width=15,space=1,add=TRUE)
+
 ```
 ## The Pascal and Related Distributions
 
