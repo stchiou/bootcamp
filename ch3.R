@@ -99,4 +99,16 @@ P <- dpois(q,4)
 pd <-cbind(x,P)
 grid.newpage()
 grid.table(pd)
-#####################################################
+#######################################################
+# 13. Poison Probability Distribution, Different Lambda
+#######################################################
+x <- c(0:40)
+pd1 <- dpois(x,4)
+pd2 <- dpois(x,8)
+pd3 <- dpois(x,12)
+pd4 <- dpois(x,16)
+barplot(pd1,x,col="blue",xlab="x",ylab="p(x)",beside=TRUE,axes=FALSE,width=15,space=1,ylim=c(0,0.2))
+barplot(pd2,x,col="red",xlab="x",ylab="p(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
+barplot(pd3,x,col="yellow",xlab="x",ylab="p(x)",beside=TRUE,axes=FALSE,width=15,space=1,add=TRUE)
+barplot(pd4,x,col="green",xlab="x",ylab="p(x)",beside=TRUE,axes=FALSE,width=15,space=1,add=TRUE)
+#########################################################
