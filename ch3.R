@@ -69,3 +69,34 @@ pd <- dbinom(drawn,15,0.1)
 bd <- cbind(drawn,pd)
 grid.newpage()
 grid.table(bd)
+###########################################
+# 10. Binomial Distribution of Different p
+###########################################
+n=c(0:15)
+bd0.1 <- dbinom(n,15,0.1)
+bd0.5 <- dbinom(n,15,0.5)
+bd0.9 <- dbinom(n,15,0.9)
+barplot(bd0.1,n,col="blue",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,ylim=c(0,0.4))
+barplot(bd0.5,n,col="red",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
+barplot(bd0.9,n,col="yellow",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
+###################################################
+# 11. Binomial Distribution of Different n, fixed p
+###################################################
+n <- c(0:30)
+bd1 <- dbinom(n,10,0.25)
+bd2 <- dbinom(n,20,0.25)
+bd3 <- dbinom(n,40,0.25)
+barplot(bd1,n,col="blue",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,ylim=c(0,0.3))
+barplot(bd2,n,col="red",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
+barplot(bd3,n,col="yellow",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
+#####################################################
+# 12. Poisson Distribution--Density Function
+#####################################################
+library(grid)
+library(gridExtra)
+x <- c(0,1,2)
+P <- dpois(q,4)
+pd <-cbind(x,P)
+grid.newpage()
+grid.table(pd)
+#####################################################
