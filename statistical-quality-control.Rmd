@@ -372,7 +372,7 @@ pd1 <- dpois(x,4)
 pd2 <- dpois(x,8)
 pd3 <- dpois(x,12)
 pd4 <- dpois(x,16)
-gp <- c(4,8,12,16)
+barplot(pd1,x,col="blue",xlab="x",ylab="p(x)",beside=TRUE,axes=TRUE,width=15,space=1,ylim=c(0,0.2),legend(x,y=1,0,legend="4"))
 
 
 ```
