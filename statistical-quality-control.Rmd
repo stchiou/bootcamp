@@ -372,7 +372,11 @@ pd1 <- dpois(x,4)
 pd2 <- dpois(x,8)
 pd3 <- dpois(x,12)
 pd4 <- dpois(x,16)
-barplot(pd1,x,col="blue",xlab="x",ylab="p(x)",beside=TRUE,axes=TRUE,width=15,space=1,ylim=c(0,0.2),legend(x,y=1,0,legend="4"))
+barplot(pd1,x,col="blue",xlab="x",ylab="p(x)",beside=TRUE,axes=TRUE,width=15,space=1,ylim=c(0,0.2),main=expression(paste("Poisson Probability Distribution for selected values of ",lambda)))
+barplot(pd2,x,col="red",xlab="x",ylab="p(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
+barplot(pd3,x,col="yellow",xlab="x",ylab="p(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
+barplot(pd4,x,col="green",xlab="x",ylab="p(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
+legend(1100,0.2,title=expression(lambda) ,legend=c("4","8","12","16"),col=c("red","blue","yellow","green"),fill=c("blue","red","yellow","green"),cex=0.8)
 
 
 ```
