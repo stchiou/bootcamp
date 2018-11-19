@@ -384,7 +384,14 @@ legend(1100,0.2,title=expression(lambda) ,legend=c("4","8","12","16"),col=c("red
 ```
 
 - The Poisson distribution can be derived as a limiting form of the binomial distribution
-    - 
+    
+    - a binomial distribution with parameters $n$ and $p$
+    
+    - let $n$ approaches infinity and $p$ approaches 0
+    
+    - $np=\lambda$ is a constant
+    
+    
 ## The Pascal and Related Distributions
 
 ## 3. Important Continuous Distributions
