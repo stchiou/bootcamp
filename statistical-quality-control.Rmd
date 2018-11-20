@@ -6,7 +6,7 @@ output: html_notebook
 
 ## 1. Describing Variability
 
-### 1.1 Stem-and-Leaf Plot
+### 1.1. Stem-and-Leaf Plot
   - One of the most useful graphica techniques for summarizing and presenting data.
 
 #### Process
@@ -21,7 +21,7 @@ output: html_notebook
 days <- c(48,41,35,36,37,26,36,46,35,47,35,34,36,42,43,36,56,32,46,30,37,43,17,26,28,27,45,33,22,27,16,22,33,30,24,23,22,30,31,17)
 stem(days)
 ```
-### 1.2 Time Series Plot (Run Chart)
+### 1.2. Time Series Plot (Run Chart)
 - A plot of data values versus time.
 - Called a marginal plot if a histogram/dot plot is attached to the margin of the chart.
 
@@ -32,7 +32,7 @@ plot(df,xlab="Times",ylab="Days",main="Marginal Plot")
 par(mar=c(5,0,2,1))
 stripchart(days,method="stack",offset=0.5,vertical=TRUE,axes=FALSE)
 ```
-### 1.3 Histogram
+### 1.3. Histogram
   - is a more compact summary of data than a stem-and-leaf plot.
   - better suited for larger data set, 75 to 100 or more observations
 
@@ -54,31 +54,31 @@ hist(thick)
 defect <- c(6,1,5,7,8,6,0,2,4,2,5,2,4,4,1,4,1,7,2,3,4,3,3,3,6,3,2,3,4,5,5,2,3,4,4,4,2,3,5,7,5,4,5,5,4,5,3,3,3,12)
 hist(defect,12)
 ```
-### 1.4 Numerical Summary of Data
+### 1.4. Numerical Summary of Data
  - Numerical measures of central tendency and scatter.
  - suppose that $x_1, x_2, ...,x_n$ are observations
 
-#### Sample Average
+#### 1.4.1. Sample Average
 $$\bar{x}=\frac{x_1+x_2+...+x_n}{n}=\frac{\sum_{i=1}^{n}x_i}{n}$$
 - arithmetic mean of the $n$ observations
 ```{r mean_calculation}
 mean(thick)
 ```
 
-#### Sample Variance
+#### 1.4.2. Sample Variance
 $$s^2=\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}$$
 - measure variability in the sample data
 - if there is no variability in the sample, each observation $x_i=\bar{x}$ and the sample variance $S^2=0$
 ```{r variance_calculation}
 var(thick)
 ```
-#### Sample Standard Deviation
+#### 1.4.3. Sample Standard Deviation
 $$s=\sqrt{\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}}$$
 ```{r standard_deviation}
 sd(thick)
 
 ```
-### 1.5 Box Plot (Box Whisker Plot)
+### 1.5. Box Plot (Box Whisker Plot)
 - graphical display for data that simultaneously displays:
       - central tendency
       - spread of variability
@@ -97,19 +97,19 @@ text(x=bp$stats,y=0.7,labels=leg)
 - A mathematical model that relates the value of the variable with the probability of occurence that value in the population.
 - There are two types of probability distribution:
 
-#### Continous Distributions
+#### 1.6.1. Continous Distributions
 - when the variable being measured is on a continous scale, its probability distribution is called a _continous distribution_
 - the appearance of the continous distribution is a curve with area under the curve equal to probability
 - the probability that $x$ lies in the interval from $a$ to $b$ is written as 
 $$P\{a\le{x}\le{b}\}=\int_a^b f(x)dx$$
 
-#### Discrete Distributions
+#### 1.6.2. Discrete Distributions
 - when the parameter being measured can only take on certain values, its probability distribution is called a _discrete distribution_
 - the appearance of a discrete distribution is a series of vertical spikes with the height of each spike proportional to the probability.
 - the distribution can be described as:
 $$P\{x=x_i\}=p(x_i)$$
 
-##### Central Tendency
+#### 1.6.3. Central Tendency
 - The *mean* $\mu$ of a probability distribution is a measure of the **central tendency** in the distribution.
 - the mean is defined as
 $$
@@ -155,7 +155,7 @@ $$
 
 ### 2.1. The Hypergeometric Distribution
 
-#### Definition
+#### 2.1.1. Definition
 - hypergeometric random variable $x$
 
     - within a finite population consisting of $N$ items, 
@@ -164,7 +164,7 @@ $$
     
     - a random sample of $n$ items is selected from the population _without replacement_, $x$ is the number observed that belongs to the class of interst
 
-#### Term
+#### 2.1.2. Terms
 - The number of Combinations of $a$ Items Taken $b$ at a Time is denoted as
 
 $$
@@ -176,7 +176,7 @@ b
 \right)=\frac{a!}{b!(a-b)!}
 $$
 
-#### The Distribution
+#### 2.1.3. The Distribution
 
 $$
 p(x)=\frac{
@@ -221,21 +221,21 @@ $$ \text{probability of defective items drawn}=\frac{\text{combinations of non-c
 **combination of conformative items drawn**: how many ways that conformative items in the sample can be drawn from the pool of conformative items in the population
 
 
-#### Mean
+#### 2.1.4. Mean
 - the proportion of defective items multiply by the number of item drawn each time
 $$
 \mu=\frac{nD}{N}
 =n\times\frac{D}{N}\\
 $$
 
-#### Variance
+#### 2.1.5. Variance
 
 $$
 \sigma^2=\frac{nD}{N}(1-\frac{D}{N})
 (\frac{N-n}{N-1}) 
 $$
 
-#### Application in Statistical Quality Control
+#### 2.1.6. Application in Statistical Quality Control
 
 - the **hypergeometric distribution** is the appropriate probability model for selecting a _random sample_ of $n$ items _without replacement_ from a lot of $N$ items of which $D$ are non conforming (defective)
 - $x$ usually represents the number of nonconforming items found in the sample
@@ -257,15 +257,15 @@ g <- grid.table(hyper)
 
 ```
 
-## The Binomial Distribution
+## 2.2. The Binomial Distribution
 
-### Bernoulli Trials
+### 2.2.1. Bernoulli Trials
 
 - a process consists of a sequence of $n$ independent trials
     - the outcome of each trial does not depend in any way of the outcome of previous trials
 - the outcome of each trial is either a _success_ or a _failure_
 
-### Definition
+### 2.2.2. Definition
 
 - the probability of "success" on any trial, $p$ is constant
 
@@ -273,16 +273,21 @@ g <- grid.table(hyper)
 
 $$p(x)=\left(\begin{array} \\n \\x\end{array}\right)p^x(1-p)^{n-x}  \hspace{1cm} x=0,1,...,n$$
 
-- The mean of the binomial distribution is
+### 2.2.3. Mean
+The mean of the binomial distribution is
 $$ \mu=np$$
 
-- The variance of the binomial distribution is 
+### 2.2.4. Variance
+The variance of the binomial distribution is 
 
 $$ \sigma^2=np(1-p)$$
-- the binomial distribution is the appropriate probability model for **sampling from an infinitely large population** where
 
-$p$ represents the fraction of defective item in poplulation
-$x$ represents the number of nonconforming item found in a random sample of $n$ items
+### 2.2.5. Application of the Binomail Distribution
+
+The binomial distribution is the appropriate probability model for **sampling from an infinitely large population** where
+
+- $p$ represents the fraction of defective item in poplulation
+- $x$ represents the number of nonconforming item found in a random sample of $n$ items
 
     
 ```{r binomial_distribution}
@@ -294,7 +299,11 @@ bd <- cbind(drawn,pd)
 grid.newpage()
 grid.table(bd)
 ```
-- for a fixed $n$, the binomial distribution becomes more symmetric as $p$ increases from $0$ to $0.5$ or decreases from $1$ to $0.5$
+### 2.2.6. Effects of Parameters on the Appearance of Binomial Distribution
+
+#### 2.2.6.1. Changes in $p$ 
+
+For a fixed $n$, the binomial distribution becomes more symmetric as $p$ increases from $0$ to $0.5$ or decreases from $1$ to $0.5$.
 
 ```{r Binomial Distribution n_15 different p}
 n=c(0:15)
@@ -306,7 +315,9 @@ barplot(bd0.5,n,col="red",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,sp
 barplot(bd0.9,n,col="yellow",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
 legend(300,0.4,col=c("blue","red","yellow"),legend=c("p=0.1","p=0.5","p=0.9"),fill=c("blue","red","yellow"),cex=0.8)
 ```
-- for a fixed $p$ the distribution becomes more symmetric as $n$ increases
+
+#### 2.2.6.2. Changes in Sample Size
+For a fixed $p$ the distribution becomes more symmetric as $n$ increases
 ```{r binomialdistribution of different n fixed p}
 
 n <- c(0:30)
@@ -318,9 +329,9 @@ barplot(bd2,n,col="red",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,spac
 barplot(bd3,n,col="yellow",xlab="x",ylab="f(x)",beside=TRUE,axes=TRUE,width=15,space=1,add=TRUE)
 legend(800,0.3,col=c("blue","red","yellow"),legend=c("n=10","n=20","n=40"),fill=c("blue","red","yellow"),cex=0.8)
 ```
-#### Sample Fraction Defective
+#### 2.2.3. Sample Fraction Defective
 
-- also called **sample fraction nonconforming**
+- Also called **sample fraction nonconforming**
 
  $$\hat{p}=\frac{x}{n}$$
 - $x$ has a binomial distribution with parameters $n$ and $p$
@@ -336,18 +347,18 @@ $$ P \left\{\hat{p} \le a\right\}=P\left\{\frac{x}{n} \le a\right\}=P\left\{p\le
 
 - the variance of $\hat{p}$ is 
 $$\sigma_{\hat{p}}^2=\frac{p(1-p)}{n}$$
-## The Poisson Distribution
+## 2.3. The Poisson Distribution
 
-### Definition
+### 2.3.1. Definition
 
 $$p(x)=\frac{e^{-\lambda}\lambda^x}{x!}\\
 x=0,1,.. \text{and }\lambda \gt 0 $$
 
-### Mean
+### 2.3.2. Mean
 
 $$ \mu=\lambda$$
 
-### Variance
+### 2.3.3. Variance
 
 $$ \sigma^2=\lambda$$
 
@@ -393,11 +404,11 @@ legend(1100,0.2,title=expression(lambda) ,legend=c("4","8","12","16"),col=c("red
     - $np=\lambda$ is a constant
     
     
-## The Pascal and Related Distributions
+## 2.4. The Pascal and Related Distributions
 - a sequence of independent trials, each with probability of success $p$
 - $x$ is a Pascal random variable with probability distribution defined as
 
-### Definition
+### 2.4.1. Definition
 
 $$
   p(x)=\left(\begin{matrix}
@@ -407,47 +418,52 @@ r-1\\
 x=r,r+1,r+2... \; \text{ where }r\ge 1 \text{ is an integer}
 $$
 
-### Mean
+### 2.4.2. Mean
 
 $$\mu=\frac{r}{p}$$
 
-### Variance
+### 2.4.3. Variance
 
 $$ \sigma^2 =\frac{r(1-p)}{p^2}$$
-### Special Cases
+### 2.4.4. Special Cases
 
-#### Negative Binomial Distribution
+#### 2.4.4.1. Negative Binomial Distribution
 - when $r \gt 0$ and is not neccessarily an integer
 - useful as the underlying statistical model for "count" data
    
-##### Differences between Binomial Distribution and Negative Binomial Distribution
+##### 2.4.4.1.1. Differences between Binomial Distribution and Negative Binomial Distribution
    - **binomial distribution** fix the _sample size_ and observe the number of _successes_
    - **negative binomial distribution** fix the _number of successes_ and observe the _sample size_ required to achieve them
 
-#### Geometric Distribution
+#### 2.4.4.2. Geometric Distribution
 - when $r=1$
 - the number of Bernoulli trials unit the _fist_ success
 
 ## 3. Important Continuous Distributions
 
-### The Normal Distribution
-- the most important distribution in both the theory and application of statistics
-- a bell-shaped curve
-#### Definition
-- nomal random variable $x$ has the probability distribution of 
+### 3.1. The Normal Distribution
+- The normal distribution is the most important distribution in both the theory and application of statistics.
+- The visual appearance of its probability density function is a bell-shaped curve.
+
+#### 3.1.1. Definition
+
+A normal random variable $x$ has the probability distribution of 
 $$
 f(x)=\frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2} \;-\infty \lt x \lt \infty
 $$
-#### Mean
+
+#### 3.1.2. Mean
 
 $$ \mu(-\infty \lt \mu \lt \infty)$$
-#### Variance
+
+#### 3.1.3. Variance
 
 $$ \sigma^2 \gt 0 $$
-#### Notation
+
+#### 3.1.4. Notation
 
 $$x\sim N(\mu,\sigma^2)$$
-- $x$ is normally distributed with mean $\mu$ and variance $\sigma^2$
+$x$ is normally distributed with mean $\mu$ and variance $\sigma^2$
 
 ### The Lognormal Distribution
 
