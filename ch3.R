@@ -2,6 +2,7 @@
 # Statistical Quality Control
 # III. Modeling Process Quality
 # Start: 10/23/2018
+# by Sean Chiou
 ########################################
 # 1. Stem-and-leaf Plot
 ########################################
