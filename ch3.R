@@ -7,15 +7,23 @@
 # 1. Stem-and-leaf Plot
 ########################################
 days <- c(48,41,35,36,37,26,36,46,35,47,35,34,36,42,43,36,56,32,46,30,37,43,17,26,28,27,45,33,22,27,16,22,33,30,24,23,22,30,31,17)
-stem(days)
+plot1 <- stem(days)
+png(filename="stepplot.png")
+plot(plot1)
+dev.off()
 ########################################
 # 2. Time Series Marginal Plot
 ########################################
+times <- seq(1:40)
+df <- data.frame(times,days)
 new_layout <- layout(matrix(c(1,2),nrow=1,ncol=2),widths=c(5,1),heights=c(5,5),TRUE)
 par(mar=c(5,4,2,0))
+png(filename="timeplot.png")
 plot(df,xlab="Times",ylab="Days",main="Marginal Plot")
 par(mar=c(5,0,2,1))
+png(filename="strip.png")
 stripchart(days,method="stack",offset=0.5,vertical=TRUE,axes=FALSE)
+dev.off()
 #########################################
 # 3. Histograms
 #########################################
