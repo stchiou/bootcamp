@@ -4,12 +4,14 @@
 # Start: 10/23/2018
 # by Sean Chiou
 ########################################
-# 1. Stem-and-leaf Plot
+# Stem-and-leaf Plot
 ########################################
 days <- c(48,41,35,36,37,26,36,46,35,47,35,34,36,42,43,36,56,32,46,30,37,43,17,26,28,27,45,33,22,27,16,22,33,30,24,23,22,30,31,17)
 tempplot1 <- capture.output(stem(days))
 plot.new()
+png(filename="stem.png")
 text(0,1,paste(tempplot1,collapse='\n'),adj=c(0,1),family='mono')
+device.off()
 ########################################
 # 2. Time Series Marginal Plot
 ########################################
