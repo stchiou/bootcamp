@@ -19,13 +19,18 @@ output: html_notebook
   - list beside each stem all leaves corresponding to the observed data values according to the order in which they are encountered in the data set.
 ```{r stem_and_leaf_plot}
 days <- c(48,41,35,36,37,26,36,46,35,47,35,34,36,42,43,36,56,32,46,30,37,43,17,26,28,27,45,33,22,27,16,22,33,30,24,23,22,30,31,17)
-stem(days)
+tempplot1 <- capture.output(stem(days))
+plot.new()
+text(0,1,paste(tempplot1,collapse='\n'),adj=c(0,1),family='mono')
+
 ```
 ### 1.2. Time Series Plot (Run Chart)
 - A plot of data values versus time.
 - Called a marginal plot if a histogram/dot plot is attached to the margin of the chart.
 
 ```{r time_series_plot_marginal_plot}
+times<- seq(1:40)
+df <- data.frame(times,days)
 new_layout <- layout(matrix(c(1,2),nrow=1,ncol=2),widths=c(5,1),heights=c(5,5),TRUE)
 par(mar=c(5,4,2,0))
 plot(df,xlab="Times",ylab="Days",main="Marginal Plot")
