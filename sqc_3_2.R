@@ -1,12 +1,10 @@
-
-
 #########################################
 # Statistical Quality Control
 # III. Modeling Process Quality
 # Start: 10/23/2018
 # by Sean Chiou
 ########################################
- Time Series Marginal Plot
+# Time Series Marginal Plot
 ########################################
 times <- seq(1:40)
 df <- data.frame(times,days)
