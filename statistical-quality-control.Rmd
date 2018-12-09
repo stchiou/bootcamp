@@ -450,6 +450,7 @@ $$ \sigma^2 =\frac{r(1-p)}{p^2}$$
 - The normal distribution is the most important distribution in both the theory and application of statistics.
 - The visual appearance of its probability density function is a bell-shaped curve.
 
+
 #### 3.1.1. Definition
 
 A normal random variable $x$ has the probability distribution of 
