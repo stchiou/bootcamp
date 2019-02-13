@@ -15,9 +15,18 @@ total <- sum(expenditure)
 percent <- expenditure/total*100
 pie(percent,labels=program, main="Federal Government Programs")
 barplot(percent,names.arg=program,ylab="2006 Expenditures (%)",main="Federal Government Programs",las=2)
+#####################################
 #3.2
 year<- c("1990","1995","1997","1998","1999","2000","2001","2002")
 passenger<- c(9436,8687,8273,8142,8697,8852,8422,8082)
 suv_truck<-c(4733,6517,7226,7821,8717,8965,9050,9036)
 vehicle <- rbind(passenger,suv_truck)
 barplot(vehicle,main="Vehicles Sold",names.arg=year,xlab="Year",ylab="Thousands of Units",col=c("darkblue","red"),las=2, beside=TRUE)
+####################################
+#3.3
+year1 <- c("1980","1990","1995","1998","1999","2000","2001")
+family_practice <- c(47.8,57.6,59.9,64.6,66.2,67.5,70.0)
+office_based <- c(271.3,359.9,427.3,468.8,473.2,490.4,514.0)
+family_percent <- family_practice/office_based
+barplot(family_practice,main="Family Practice vs Years",names.arg=year1,xlab="Year",ylab="Physicians, Thousands",las=2)
+barplot(family_percent,main="Percentage of Family Practice Physicians", names.arg=year1,xlab="Year",ylab="Percentage",las=2)
