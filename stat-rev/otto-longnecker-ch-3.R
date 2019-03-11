@@ -30,3 +30,5 @@ office_based <- c(271.3,359.9,427.3,468.8,473.2,490.4,514.0)
 family_percent <- family_practice/office_based
 barplot(family_practice,main="Family Practice vs Years",names.arg=year1,xlab="Year",ylab="Physicians, Thousands",las=2)
 barplot(family_percent,main="Percentage of Family Practice Physicians", names.arg=year1,xlab="Year",ylab="Percentage",las=2)
+####################################
+#3.4
